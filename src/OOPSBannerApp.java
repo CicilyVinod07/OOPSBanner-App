@@ -2,74 +2,21 @@ public class OopsBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join("",
-                " *****  ",   // O
-                "   ",
-                " *****  ",   // O
-                "   ",
-                " ****** ",   // P
-                "   ",
-                " *****  "    // S
-        ));
+        // Store all banner rows inside an array
+        String[] bannerLines = {
 
-        System.out.println(String.join("",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "*     * "
-        ));
+            String.join("", " *****  ", "   ", " *****  ", "   ", " ****** ", "   ", " *****  "),
+            String.join("", "*     * ", "   ", "*     * ", "   ", "*     * ", "   ", "*     * "),
+            String.join("", "*     * ", "   ", "*     * ", "   ", "*     * ", "   ", "*       "),
+            String.join("", "*     * ", "   ", "*     * ", "   ", "******  ", "   ", " *****  "),
+            String.join("", "*     * ", "   ", "*     * ", "   ", "*       ", "   ", "      * "),
+            String.join("", "*     * ", "   ", "*     * ", "   ", "*       ", "   ", "*     * "),
+            String.join("", " *****  ", "   ", " *****  ", "   ", "*       ", "   ", " *****  ")
+        };
 
-        System.out.println(String.join("",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "*       "
-        ));
-
-        System.out.println(String.join("",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "******  ",
-                "   ",
-                " *****  "
-        ));
-
-        System.out.println(String.join("",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "*       ",
-                "   ",
-                "      * "
-        ));
-
-        System.out.println(String.join("",
-                "*     * ",
-                "   ",
-                "*     * ",
-                "   ",
-                "*       ",
-                "   ",
-                "*     * "
-        ));
-
-        System.out.println(String.join("",
-                " *****  ",
-                "   ",
-                " *****  ",
-                "   ",
-                "*       ",
-                "   ",
-                " *****  "
-        ));
+        // Loop to print banner
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
