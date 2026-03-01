@@ -1,42 +1,8 @@
-class Banner {
+public class OOPSBannerApp {
 
-    // Generate letter O
-    public String[] generateO() {
-        return new String[]{
-            " ***** ",
-            "*     *",
-            "*     *",
-            "*     *",
-            "*     *",
-            "*     *",
-            " ***** "
-        };
-    }
-
-    // Generate letter P
-    public String[] generateP() {
-        return new String[]{
-            "****** ",
-            "*     *",
-            "*     *",
-            "****** ",
-            "*      ",
-            "*      ",
-            "*      "
-        };
-    }
-
-    // Generate letter S
-    public String[] generateS() {
-        return new String[]{
-            " ***** ",
-            "*     *",
-            "*      ",
-            " ***** ",
-            "      *",
-            "*     *",
-            " ***** "
-        };
+    public static void main(String[] args) {
+        OOPSBannerApp app = new OOPSBannerApp();
+        app.displayOOPS();
     }
 
     // Display OOPS banner
@@ -47,6 +13,7 @@ class Banner {
         String[] P  = generateP();
         String[] S  = generateS();
 
+        // Array declaration + initialization combined
         String[] banner = {
             String.join("   ", O1[0], O2[0], P[0], S[0]),
             String.join("   ", O1[1], O2[1], P[1], S[1]),
@@ -61,13 +28,43 @@ class Banner {
             System.out.println(line);
         }
     }
-}
 
-public class OOPSBannerApp {
+    // Generate O
+    public String[] generateO() {
+        return new String[] {
+            " ***** ",
+            "*     *",
+            "*     *",
+            "*     *",
+            "*     *",
+            "*     *",
+            " ***** "
+        };
+    }
 
-    public static void main(String[] args) {
+    // Generate P
+    public String[] generateP() {
+        return new String[] {
+            "****** ",
+            "*     *",
+            "*     *",
+            "****** ",
+            "*      ",
+            "*      ",
+            "*      "
+        };
+    }
 
-        Banner banner = new Banner();   // Object creation
-        banner.displayOOPS();           // Method call
+    // Generate S
+    public String[] generateS() {
+        return new String[] {
+            " ***** ",
+            "*     *",
+            "*      ",
+            " ***** ",
+            "      *",
+            "*     *",
+            " ***** "
+        };
     }
 }
