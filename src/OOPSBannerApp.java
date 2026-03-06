@@ -1,42 +1,26 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class CharacterPattern {
-
-    private char character;
-    private String[] pattern;
-
-    public CharacterPattern(char character, String[] pattern) {
-        this.character = character;
-        this.pattern = pattern;
-    }
-
-    public char getCharacter() {
-        return character;
-    }
-
-    public String[] getPattern() {
-        return pattern;
-    }
-}
-
 public class OOPSBannerApp {
 
-    private Map<Character, CharacterPattern> patternMap = new HashMap<>();
-
-    public OOPSBannerApp() {
-        initializePatterns();
-    }
-
     public static void main(String[] args) {
-        OOPSBannerApp app = new OOPSBannerApp();
-        app.displayWord("OOPS");
+
+        
+        Map<Character, String[]> patternMap = buildCharacterPatterns();
+
+        
+        String word = "OOPS";
+
+        
+        displayBanner(word, patternMap);
     }
 
-    // Initialize stored character-pattern mappings
-    private void initializePatterns() {
+    
+    public static Map<Character, String[]> buildCharacterPatterns() {
 
-        patternMap.put('O', new CharacterPattern('O', new String[]{
+        Map<Character, String[]> map = new HashMap<>();
+
+        map.put('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -44,9 +28,9 @@ public class OOPSBannerApp {
                 "*     *",
                 "*     *",
                 " ***** "
-        }));
+        });
 
-        patternMap.put('P', new CharacterPattern('P', new String[]{
+        map.put('P', new String[]{
                 "****** ",
                 "*     *",
                 "*     *",
@@ -54,9 +38,9 @@ public class OOPSBannerApp {
                 "*      ",
                 "*      ",
                 "*      "
-        }));
+        });
 
-        patternMap.put('S', new CharacterPattern('S', new String[]{
+        map.put('S', new String[]{
                 " ***** ",
                 "*     *",
                 "*      ",
@@ -64,26 +48,32 @@ public class OOPSBannerApp {
                 "      *",
                 "*     *",
                 " ***** "
-        }));
+        });
+
+        return map;
     }
 
-    // Display any word using stored mappings
-    public void displayWord(String word) {
+    
+    public static void displayBanner(String word, Map<Character, String[]> map) {
 
         int height = 7;
 
-        for (int row = 0; row < height; row++) {
+        
+        for (int i = 0; i < height; i++) {
 
+            StringBuilder line = new StringBuilder();
+
+            
             for (char ch : word.toCharArray()) {
 
-                CharacterPattern cp = patternMap.get(ch);
+                String[] pattern = map.get(ch);
 
-                if (cp != null) {
-                    System.out.print(cp.getPattern()[row] + "   ");
+                if (pattern != null) {
+                    line.append(pattern[i]).append("  ");
                 }
             }
 
-            System.out.println();
+            System.out.println(line);
         }
     }
 }
